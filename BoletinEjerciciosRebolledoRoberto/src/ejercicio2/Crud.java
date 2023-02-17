@@ -27,8 +27,9 @@ public class Crud {
 		lista.add(s);		
 	}
 	public void eliminar(Socio s) {
-		lista.add(s);
+		lista.remove(s);
 	}
+	/*Si en este metodo busco un número, primero tendré que buscarlo*/
 	public Socio findBynum(int num) {
 		int i=0;
 		boolean verda = false;
@@ -45,7 +46,10 @@ public class Crud {
 		else
 			return null;		
 	}
-	
+	public void editar(int num, double nuevaCuota) {
+		Socio s= findBynum(num);
+		s.setPago(nuevaCuota);
+	}
 	
 	
 }	

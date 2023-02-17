@@ -31,7 +31,7 @@ public class Principal {
 		listaNotas.add(a);
 		listaNotas.add(b);
 		listaNotas.add(c);
-		
+			
 		do {
 			menu();
 			menu=Leer.datoInt();

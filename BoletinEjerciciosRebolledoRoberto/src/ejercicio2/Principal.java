@@ -36,8 +36,7 @@ public class Principal {
 				apellidos=Leer.dato();
 				System.out.println("Introduzca el dinero que va a aportar al club");
 				dinero =Leer.datoDouble();
-				Socio s= new Socio (numSocio,nombre,apellidos,dinero);
-				clb.getCrud().agregar(s);
+				clb.getCrud().agregar(new Socio(numSocio,nombre,apellidos,dinero));
 				numSocio++;
 				
 				break;
@@ -62,13 +61,31 @@ public class Principal {
 				Socio so=new Socio (num,nombre,apellidos,dinero);
 				
 				clb.getCrud().getLista().set(num-1, so);
+				break;
+			
 				
-								
+			case 4:
 				
-				
-				
+				System.out.println("Seleccion el numero del socio que quiera borrar");
+				num=Leer.datoInt();
+				clb.getCrud().eliminar(clb.getCrud().findBynum(num));
 				break;
 				
+			case 5:
+				
+				System.out.println("Diga el número del socio");
+				num=Leer.datoInt();
+				System.out.println("Diga la nueva cuota del socio");
+				dinero=Leer.datoDouble();
+				clb.getCrud().editar(num, dinero);
+				
+				break;
+			
+			case 6:
+				
+				System.out.println(clb.calcGanancia());
+				
+				break;
 			}
 			
 		}while(menu!=0);
@@ -80,6 +97,8 @@ public class Principal {
 		System.out.println("2.-Buscar socio");
 		System.out.println("3.-Modificar socio");
 		System.out.println("4.-Borrar socio");
+		System.out.println("5.-Editar");
+		System.out.println("6.-Calcular Ganancias");
 		
 		
 	}

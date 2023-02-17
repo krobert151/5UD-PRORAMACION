@@ -1,5 +1,7 @@
 package ejercicio2;
 
+import java.util.Iterator;
+
 public class GestionClub {
 	private String nombre;
 	private Crud crud;
@@ -32,7 +34,15 @@ public class GestionClub {
 	public String toString() {
 		return "GestionClub [nombre=" + nombre + ", crud=" + crud + ", saldo=" + saldo + "]";
 	}
-	
+	public double calcGanancia() {
+		Iterator <Socio> it = crud.getLista().iterator();  
+		double totalCuota= 0;
+		while(it.hasNext()) {
+			totalCuota+=it.next().getPago();			
+		}
+		return totalCuota;
+		
+	}
 	
 	
 	
