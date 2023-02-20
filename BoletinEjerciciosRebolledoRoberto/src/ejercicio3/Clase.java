@@ -27,6 +27,6 @@ public class Clase {
 		return "Clase [curso=" + curso + ", alumn=" + alumn + "]";
 	}
 	
-	public void añadirAlumno()
+
 	
 }
