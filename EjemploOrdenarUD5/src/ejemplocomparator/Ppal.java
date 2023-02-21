@@ -57,8 +57,6 @@ public class Ppal {
 					for (Corredor con : corredores) {
 						System.out.println(con);
 					}
-					
-					
 					break;
 	
 				case 2:
@@ -103,7 +101,14 @@ public class Ppal {
 						pos++;
 					}
 					break;
-	
+				
+				case 4:
+					
+					for (Corredor c : corredores) {
+						System.out.println(c);
+					}
+					
+					break;
 				default:
 					System.out.println("Opción no válida");
 					break;
