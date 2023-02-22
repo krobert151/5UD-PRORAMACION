@@ -13,8 +13,9 @@ public class Principal {
 	mostrar, modificar o borrar. Se puede crear otra clase con funcionalidades como sacar nota
 	media del curso, dar el número de suspensos en total, media de suspensos, etc. Usa la
 	interfaz Set implementada por HashSet.*/
-		String curso="1DAM";
+		String curso="1DAM",dni,nombre,apellido;
 		int menu;
+		double notaM;
 		Set <Alumno > alumnos = new HashSet <Alumno>();
 		Clase dam = new Clase(curso,alumnos);
 		alumnos.add(new Alumno("20202020S","Mamonlo","Manolez",20,4.5));
@@ -39,6 +40,17 @@ public class Principal {
 			case 3:
 				
 				System.out.println(dam.cuantosSuspensos());
+				
+				break;
+				
+			case 4:
+				System.out.println("Introduzca DNI");
+				dni=Leer.dato();
+				System.out.println("Introduzca nombre");
+				nombre=Leer.dato();
+				System.out.println("Introduce apellidos");
+				apellido=Leer.dato();
+				System.out.println();
 				
 				break;
 			default:
