@@ -2,7 +2,7 @@ package ejercicio6;
 
 import java.util.Objects;
 
-public class Trabajador {
+public class Trabajador implements Comparable<Trabajador> {
 	/*Crear una clase Trabajador con los siguientes atributos:
 	Nombre, DNI, Horas trabajadas y sueldo final (este se puede calcular de cualquier manera
 	sencilla de las que hemos visto anteriormente).
@@ -68,6 +68,19 @@ public class Trabajador {
 	
 	public void calcularSaldo(double sueldohora) {
 		sueldo=horas*sueldohora;
+	}
+	@Override
+	public int compareTo(Trabajador o) {
+		if(this.sueldo>o.getSueldo())
+			return -1;
+		else {
+			
+			if(this.sueldo<o.getSueldo())
+				return 1;
+			else
+				return 0;
+		}
+		
 	}
 	
 	
