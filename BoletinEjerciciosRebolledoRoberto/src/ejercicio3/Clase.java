@@ -58,7 +58,22 @@ public class Clase {
 		return sus;
 		
 	}
-	
+	public Alumno findByDni(String dni) {
+		Iterator<Alumno>it = lista.iterator();
+		while(it.hasNext()) {
+			Alumno a = it.next();
+			if(a.getDni().equalsIgnoreCase(dni)) {
+				return a;
+				
+			}	
+		}
+		return null;
+		
+	}
+	public void editNotaM(String dni, double nota) {
+		findByDni(dni).setNotaM(nota);	
+		
+	}
 	@Override
 	public String toString() {
 		return "Clase [curso=" + curso + ", lista=" + lista + "]";

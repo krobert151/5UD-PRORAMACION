@@ -31,10 +31,16 @@ public class Agenda {
 	}
 	public void mostrarTodos() {
 		
-		for (Contacto c : contactos.keySet()) {
-			System.out.println(c);
-			System.out.println(contactos.get(c));
-		}
+		for (Contacto contacto : contactos.keySet()) {
+	        System.out.println("Contacto: " + contacto.toString() + " - Número: " + contactos.get(contacto));
+	    }
+		
+	}
+	public void mostrarTodos(Map<Contacto, Integer> lista) {
+		
+		for (Contacto contacto : lista.keySet()) {
+	        System.out.println("Contacto: " + contacto.toString() + " - Número: " + lista.get(contacto));
+	    }
 		
 	}
 	public Contacto findById(int id) {
@@ -53,4 +59,12 @@ public class Agenda {
 		contactos.remove(findById(id));
 				
 	}
+	public void editarNombre(int id,String nombre) {
+		findById(id).setNombre(nombre);
+	}
+	public void editarCorreo(int id,String correo) {
+		findById(id).setCorreo(correo);
+		
+	}
+
 }

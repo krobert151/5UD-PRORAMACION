@@ -46,11 +46,14 @@ public class Principal {
 			case 4:
 				System.out.println("Introduzca DNI");
 				dni=Leer.dato();
-				System.out.println("Introduzca nombre");
-				nombre=Leer.dato();
-				System.out.println("Introduce apellidos");
-				apellido=Leer.dato();
-				System.out.println();
+				System.out.println(dam.findByDni(dni));
+				
+				break;
+				
+			case 5:
+				System.out.println("introduce la nota Media");
+				notaM=Leer.datoDouble();
+				
 				
 				break;
 			default:
@@ -73,6 +76,7 @@ public class Principal {
 		System.out.println("2.-Calcular nota media");
 		System.out.println("3.-Mostrar Suspensos");
 		System.out.println("4.-Mostrar uno");		
+		System.out.println("5.-Modificar notaM");
 		
 	}
 }
