@@ -14,6 +14,7 @@ public class Principal {
 		una agenda, como agregar, borrar, mostrar, buscar por algún criterio (por ejemplo, por
 		nombre), modificar algún dato, etc. Y un main para probar todo.
 		*/
+		
 		int tlfn,menu,i=1,num;
 		String nombre,email;
 		Map <Contacto,Integer> lista = new HashMap <Contacto,Integer>();
@@ -27,16 +28,8 @@ public class Principal {
 		ag.agregar(333333333, new Contacto (i,"manola","manola@"));
 		i++;
 		
-		ag.mostrarTodos();
 		
-		
-
-		Map<Contacto,Integer>tLista=new TreeMap <Contacto,Integer>(lista);
-		System.out.println(tLista);
-		Map<Contacto,Integer>tLista2=new TreeMap <Contacto,Integer>(new OrdenarPorNombre());
-		tLista2.putAll(lista);
-		System.out.println(tLista2);
-		
+	
 		do {
 			menu();
 			menu=Leer.datoInt();
@@ -84,11 +77,13 @@ public class Principal {
 			
 			case 6:
 				
+				Map<Contacto,Integer>tLista=new TreeMap <Contacto,Integer>(lista);
 				ag.mostrarTodos(tLista);
 				
 				break;
 			case 7:
-				
+				Map<Contacto,Integer>tLista2=new TreeMap <Contacto,Integer>(new OrdenarPorNombre());
+				tLista2.putAll(lista);
 				ag.mostrarTodos(tLista2);
 				
 				break;

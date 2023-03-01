@@ -2,7 +2,7 @@ package ejercicio3;
 
 import java.util.Objects;
 
-public class Alumno {
+public class Alumno implements Comparable<Alumno>{
 	
 	private String dni;
 	private String nombre;
@@ -69,6 +69,18 @@ public class Alumno {
 				&& Objects.equals(nombre, other.nombre)
 				&& Double.doubleToLongBits(notaM) == Double.doubleToLongBits(other.notaM);
 	}
+	@Override
+	public int compareTo(Alumno o) {
+		if(this.notaM>o.getNotaM())
+			return 1;
+		else {
+			if(this.notaM<o.getNotaM())
+				return -1;
+			else
+				return 0;
+		}
+	}
+	
 	
 	
 	

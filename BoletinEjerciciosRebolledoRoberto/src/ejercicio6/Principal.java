@@ -1,13 +1,13 @@
 package ejercicio6;
-
+        
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import utilidades.Leer;
-
+        
 public class Principal {
-
+        
 	public static void main(String[] args) {
 		/*Crear una clase Trabajador con los siguientes atributos:
 		Nombre, DNI, Horas trabajadas y sueldo final (este se puede calcular de cualquier manera
@@ -43,8 +43,8 @@ public class Principal {
 				}
 				
 				break;
-			
 			case 2:
+				
 				System.out.println("Seleccione el nombre del nuevo trabajador");
 				nombre=Leer.dato();
 				System.out.println("Seleccione el dni del trabajador");
@@ -64,6 +64,7 @@ public class Principal {
 				}
 				break;
 			case 4:
+				
 				Collections.sort(lista, new CompararMenosH());
 				for (Trabajador t : lista) {
 					System.out.println(t);
@@ -80,11 +81,10 @@ public class Principal {
 				break;
 			
 			}
-			
-			
+						
 		}while(menu!=0);
 				
-	}
+	}   
 	public static void menu() {
 		
 		System.out.println("1.-Ver trabajadores");
@@ -92,8 +92,7 @@ public class Principal {
 		System.out.println("3.-Ver trabajadores por horas trabajadas asx");
 		System.out.println("4.-Ver trabajadores por horas trabajadas desc");
 		System.out.println("5.-Ver por el que mas cobra");
-		
-		
-	}
-
-}
+				
+	}   
+        
+}       

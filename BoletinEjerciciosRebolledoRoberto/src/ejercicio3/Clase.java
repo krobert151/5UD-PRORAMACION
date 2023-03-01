@@ -1,5 +1,6 @@
 package ejercicio3;
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -30,6 +31,17 @@ public class Clase {
 		for(Alumno a : lista ) {	
 			System.out.println(a);
 		}
+	}
+	public void mostrarTodos(Set <Alumno> lista) {
+		
+		for (Alumno a : lista) {
+			System.out.println(a);
+		}
+		
+	}
+	public void añadir(Alumno a) {
+		lista.add(a);
+		
 	}
 	public void mostrarTodosv2() {
 		Iterator<Alumno> it= lista.iterator();
@@ -69,6 +81,21 @@ public class Clase {
 		}
 		return null;
 		
+	}
+	public Set<Alumno> findByName(String nombre) {
+		Iterator<Alumno>it = lista.iterator();
+		Set <Alumno> alum = new HashSet<Alumno>();
+		while(it.hasNext()) {
+			Alumno a=it.next();
+			if(a.getNombre().equalsIgnoreCase(nombre)) {
+				alum.add(a);
+			}
+		}
+		
+		if(!alum.isEmpty())
+			return alum;
+		
+		return null;
 	}
 	public void editNotaM(String dni, double nota) {
 		findByDni(dni).setNotaM(nota);	
