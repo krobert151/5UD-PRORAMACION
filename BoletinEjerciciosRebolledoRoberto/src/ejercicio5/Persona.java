@@ -1,7 +1,7 @@
 package ejercicio5;
-
+    
 import java.util.Objects;
-
+    
 public class Persona implements Comparable <Persona> {
 	private String dni;
 	private String nombre;
@@ -63,8 +63,6 @@ public class Persona implements Comparable <Persona> {
 		// TODO Auto-generated method stub
 		return this.dni.compareTo(o.dni);
 	}
-	
-	
-	
-	
-}
+		
+}   
+    
