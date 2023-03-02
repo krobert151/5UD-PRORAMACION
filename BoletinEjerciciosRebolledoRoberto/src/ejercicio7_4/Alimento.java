@@ -16,6 +16,21 @@ public class Alimento extends Producto {
 		this.diasCd = diasCd;
 	}
 
+	@Override
+	public double calcularPrecio(double iva) {
+		if(diasCd<3)
+			return super.calcularPrecio(1);
+		else
+			return super.calcularPrecio(iva);
+	}
+
+	@Override
+	public String toString() {
+		return "Alimento [diasCd=" + diasCd + "]";
+	}
+
+	
+	
 	
 	
 }
