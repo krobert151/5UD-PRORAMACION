@@ -25,12 +25,39 @@ public class LineaVenta {
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
+	public double calcPrecioT() {
 		
+		return p.getPrecio()*cantidad;
+		
+	}
+	public void imprimir() {
+		
+		p.imprimir();
+		System.out.print("   ");
+		System.out.print(getCantidad());
+		System.out.printf("\t│     %.2f€\t│",calcPrecioT() );
+		if(p instanceof Ropa) 
+			((Ropa) p).printColor();
+		else {
+			if(p instanceof Alimento) 
+				((Alimento) p).printDias();
+			else {
+				System.out.print("\t\t│");
+	
+			}
+		
+		}
+			
+		System.out.println(" ");
+		
+		
+	}	
 	@Override
 	public String toString() {
 		return "LineaVenta [p=" + p + ", cantidad=" + cantidad + "]";
 	}
-	
+
+
 		
 	
 }

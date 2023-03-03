@@ -1,6 +1,8 @@
 package ejercicio7_4;
 
-public class Venta {
+import java.util.Comparator;
+
+public class Venta implements Comparator <LineaVenta>{
 	private Crud crud;
 	private String atendio;
 	private String tiendaName;
@@ -30,9 +32,15 @@ public class Venta {
 	}
 	
 	public void imprimirTicket() {
-		
+		System.out.println("\n\nTienda: "+getTiendaName());
+		System.out.println("\nAtendido por: "+getAtendio()+"\n");
 		crud.imprimir();
-		
+		System.out.println("\nGracias por su compra\n\n");
+	}
+	@Override
+	public int compare(LineaVenta o1, LineaVenta o2) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 }

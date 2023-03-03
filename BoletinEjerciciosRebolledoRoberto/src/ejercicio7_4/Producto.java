@@ -30,10 +30,13 @@ public class Producto {
 		this.precio = precio;
 	}
 	
-	public double calcularPrecio(double iva) {
-		return precio*iva;
+	public void calcularPrecio(double iva) {
+		precio= precio +precio*iva/100;
 	}
-	
+	public void imprimir() {
+		
+		System.out.printf("│%d│%s\t│   %.2f€\t│",id,nombre,precio);
+	}
 	@Override
 	public String toString() {
 		return "Producto [id=" + id + ", nombre=" + nombre + ", precio=" + precio + "]";

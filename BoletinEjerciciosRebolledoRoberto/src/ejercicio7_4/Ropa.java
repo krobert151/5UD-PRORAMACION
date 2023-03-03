@@ -16,10 +16,15 @@ public class Ropa extends Producto {
 		this.color = color;
 	}
 
+	public void printColor() {
+		
+		System.out.print("color="+color+"\t│");
+		
+	}
 	@Override
-	public double calcularPrecio(double iva) {
+	public void calcularPrecio(double iva) {
 		// TODO Esbozo de método generado automáticamente
-		return super.calcularPrecio(iva);
+		 super.calcularPrecio(iva);
 	}
 
 	@Override

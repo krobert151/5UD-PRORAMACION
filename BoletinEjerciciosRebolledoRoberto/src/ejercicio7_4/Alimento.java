@@ -15,13 +15,18 @@ public class Alimento extends Producto {
 	public void setDiasCd(int diasCd) {
 		this.diasCd = diasCd;
 	}
-
+	
+	public void printDias() {
+		
+		System.out.print("diasCaduca="+diasCd+"\t│");
+	}
+	
 	@Override
-	public double calcularPrecio(double iva) {
+	public void calcularPrecio(double iva) {
 		if(diasCd<3)
-			return super.calcularPrecio(1);
+			 super.calcularPrecio(1);
 		else
-			return super.calcularPrecio(iva);
+			 super.calcularPrecio(iva);
 	}
 
 	@Override
