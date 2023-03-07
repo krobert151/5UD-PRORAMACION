@@ -42,6 +42,23 @@ public class CrudCuenta {
 			System.out.println(" ");
 		}
 	}
+	public void print(Map <String,Cuenta> lista) {
+		
+		for (String c : lista.keySet()) {
+			
+			System.out.print(c+"\t");
+			lista.get(c).print();
+			
+			if(lista.get(c) instanceof CuentaCorriente)
+				lista.get(c).printExt();
+			if(lista.get(c) instanceof CuentaJoven)
+				lista.get(c).printExt();
+			if(lista.get(c) instanceof CuentaEmpresa)
+				lista.get(c).printExt();
+			
+			System.out.println(" ");
+		}
+	}
 	
 	public void printCC() {
 		

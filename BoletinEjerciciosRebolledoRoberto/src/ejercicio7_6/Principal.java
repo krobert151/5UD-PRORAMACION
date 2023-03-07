@@ -2,6 +2,7 @@ package ejercicio7_6;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 import utilidades.Leer;
 
@@ -115,7 +116,9 @@ public class Principal {
 				
 				break;
 			case 9:
-				
+				Map <String,Cuenta> lista2 = new TreeMap <String,Cuenta>(new OrdenarClave());
+				lista2.putAll(lista);
+				bank.getCrud().print(lista2);
 				
 				break;
 			case 10:
