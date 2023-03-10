@@ -2,6 +2,7 @@ package streams;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 
 public class CrudProducto {
@@ -99,8 +100,9 @@ public class CrudProducto {
 		
 	}
 	public void reduceComplex() {
+		BiFunction<Double,Producto,Double> func= (x1,x2) -> x1+x2.getPrecioU(); 
 		
-		
+		lista.stream().reduce("Precios Con descuentos", func, (x1,x2)->x1+x2);
 		
 	}
 	@Override
