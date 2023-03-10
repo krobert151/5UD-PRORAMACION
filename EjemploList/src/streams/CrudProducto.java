@@ -57,7 +57,52 @@ public class CrudProducto {
 			return null;
 		
 	}
-	
+	public void noTiene(String nombre) {
+		if(!lista.stream().noneMatch(x -> x.getNombre().equalsIgnoreCase(nombre)))
+			System.out.println("hay"+nombre);
+		else
+			System.out.println("no hay");
+		
+	}
+	public void todosSon(double precio) {
+		
+		if(lista.stream().allMatch(x -> x.getPrecioU()<precio))
+			System.out.println("todos son mas baratos");
+		else
+			System.out.println("Hay al menos 1 que es mas caro");
+			
+		
+	}
+	public Producto mostExpensive() {
+		
+		return lista.stream().max((x,y) -> x.getPrecioU()>y.getPrecioU()?1:(x.getPrecioU()<y.getPrecioU()?-1:0)).get();
+		
+	}
+	public Producto cheapest() {
+		
+		return lista.stream().min((x,y) -> x.getPrecioU()>y.getPrecioU()?1:(x.getPrecioU()<y.getPrecioU()?-1:0)).get();
+
+		
+	}
+	public void reduceSimple() {
+		
+		System.out.println(lista.stream()
+				.map(x -> x.getNombre().concat(" - "))
+				.reduce("Productos que hay disponible", (x, y) -> x+y ));
+		
+	}
+	public void reduceOptional() {
+		
+		System.out.println(lista.stream()
+				.map(x-> x.getNombre().concat(" - "))
+				.reduce((x,y)-> x+y).get());
+		
+	}
+	public void reduceComplex() {
+		
+		
+		
+	}
 	@Override
 	public String toString() {
 		return "CrudProducto [lista=" + lista + "]";
