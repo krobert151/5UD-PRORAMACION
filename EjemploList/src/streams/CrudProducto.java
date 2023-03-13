@@ -102,7 +102,7 @@ public class CrudProducto {
 	public void reduceComplex() {
 		BiFunction<Double,Producto,Double> func= (x1,x2) -> x1+x2.getPrecioU(); 
 		
-		lista.stream().reduce("Precios Con descuentos", func, (x1,x2)->x1+x2);
+		//lista.stream().reduce("Precios Con descuentos", func, (x1,x2)->x1+x2);
 		
 	}
 	@Override
